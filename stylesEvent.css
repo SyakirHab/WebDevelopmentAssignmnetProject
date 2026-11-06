@@ -1,0 +1,28 @@
+.body {
+    background-color: #FFFFFF;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    overflow: hidden;
+    height: 50vh;
+    background-color: whitesmoke;
+}
+
+.nav-content {
+    align-self: start;
+    justify-self: center;
+    z-index: 2;
+    margin-right: 2%;
+}
+.nav-content ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+.nav-content a {
+    color: black;
+}
