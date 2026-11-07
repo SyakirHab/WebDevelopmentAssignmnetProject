@@ -23,19 +23,28 @@
     </header>
     <main>
         <section class="form-container">
-                <h1 id="formTitle">Contact Form</h1>
-                <form action="contact.html" method="GET" class="contactForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required><br><br>
+                <div id="formContent">
+                    <h1 id="formTitle"><b>Have A Question?</b></h1>
+                    <p>We'd love to hear from you!<br> Please fill out the form below and we'll get back to you as soon as possible.</p>
+                </div>
+                <div id="companyInfo">
+                    <p id="emailInfo"><span><img src="assets/mail.svg" width="20dvh" height="20dvh" alt="Email"></span> 6614@laksamanacollege.edu.bn</p>
+                    <p id="contactInfo"><span><img src="assets/call.svg" width="20dvh" height="20dvh" alt="Contact Us"></span> 1-800-123-4567</p>
+                </div>
+                <div id="contactForm">
+                    <form action="contact.html" method="GET">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br><br>
 
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-                    <button type="submit">Submit</button>
-                </form>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
         </section>
     </main>
     <footer>

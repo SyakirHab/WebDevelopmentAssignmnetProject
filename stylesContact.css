@@ -29,21 +29,50 @@ body {
 
 .form-container {
     display: flex;
-    flex-direction: column;
+    position: relative;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100dvh;
-    width: 50dvw;
+    width: 80dvw;
     background-color: aliceblue;
     border-radius: 10px;
     margin: 1dvh auto;
 }
 
+#contactForm {
+    align-self: flex-start;
+    flex-grow: 1;
+}
+
+#formContent {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
 #formTitle {
     display: flex;
-    flex-grow: 1;
     margin-bottom: 20px;
+    align-self: flex-start;
 }
-.contactForm {
-    flex-grow: 1;
+
+#companyInfo {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+
+}
+#contactInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#emailInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
