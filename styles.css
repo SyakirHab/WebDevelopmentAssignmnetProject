@@ -70,30 +70,94 @@ body {
 
 #card-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #fafafa;
 }
 
 .card2 {
+    position: relative;
     text-align: center;
     margin: 0 auto;
-    flex: 1 1 0;
-    height: 45dvh;
+    width: 98vw;
+    height: 45vh;
     border-radius: 1dvh;
     overflow: hidden;
-
-    transition:
-    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.35s ease,
-    background-size 0.5s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Background image layer (blurs on hover) */
+.card-bg {
+    position: absolute;
+    inset: -20px;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    filter: blur(0px);
+}
+
+/* Content stays sharp above the blurred image */
+.card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.35);
+    z-index: 1;
+    transition: background-color 0.25s ease;
+    pointer-events: none;
+}
+
+.card2:hover .card-bg,
+.card2.hover .card-bg {
+    filter: blur(4px) brightness(0.75);
+    transform: scale(1.05);
+}
+
+.card2:hover::before,
+.card2.hover::before {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.card2:hover,
 .card2.hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
-    background-size: 110%;
     cursor: pointer;
+}
+
+/* Info panel (hidden by default, revealed on hover) */
+.card-info {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.card2:hover .card-info,
+.card2.hover .card-info {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card2 h1 {
@@ -124,32 +188,20 @@ body {
 }
 /* this is AI above */
 
-#card2-1 {
+#card2-1 .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/unnamed.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
-#card2-2 {
+#card2-2 .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/togo.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
-#card2-3 {
+#card2-3 .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/ambuyat.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
-#card2-4 {
+#card2-4 .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/mosque.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 #welcome1 {
