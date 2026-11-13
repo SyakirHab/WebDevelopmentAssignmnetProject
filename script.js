@@ -9,6 +9,7 @@ cards.forEach(card => {
   info.innerHTML = `
     <h3>${card.dataset.title || ''}</h3>
     <p>${card.dataset.info || ''}</p>
+    <a class="explore-btn" href="${card.dataset.link || '#'}">Explore</a>
   `;
   content.appendChild(info);
 

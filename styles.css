@@ -77,14 +77,13 @@ body {
 .card2 {
     position: relative;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
     width: 98vw;
     height: 45vh;
     border-radius: 1dvh;
     overflow: hidden;
 }
 
-/* Background image layer (blurs on hover) */
 .card-bg {
     position: absolute;
     inset: -20px;
@@ -96,15 +95,16 @@ body {
     filter: blur(0px);
 }
 
-/* Content stays sharp above the blurred image */
 .card-content {
     position: relative;
     z-index: 2;
     height: 100%;
+    margin: 0 auto;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .card2::before {
@@ -135,7 +135,6 @@ body {
     cursor: pointer;
 }
 
-/* Info panel (hidden by default, revealed on hover) */
 .card-info {
     position: absolute;
     inset: 0;
@@ -166,6 +165,24 @@ body {
 }
 /* ai generated */
 
+.explore-btn {
+    display: inline-block;
+    margin-top: 0.25rem;
+    padding: 0.5rem 1.25rem;
+    background: #ffffff;
+    color: #222;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    pointer-events: auto;   
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.explore-btn:hover {
+    background: #f0f0f0;
+    transform: scale(0.80);
+}
+
 
 .card {
   display: flex;  
@@ -186,7 +203,6 @@ body {
     text-align: left;
     margin-left: 2%;
 }
-/* this is AI above */
 
 #card2-1 .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/unnamed.jpg);
