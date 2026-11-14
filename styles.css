@@ -346,7 +346,7 @@ body.dark-mode #welcome1 {
     background-color: #1E1E1E;
     color: #FFFFFF;
 }
-body .dark-mode #welcome1::before {
+body.dark-mode #welcome1::before {
     filter: grayscale(100%) brightness(0.5) opacity(0.45);
 }
 body.dark-mode #discover {
@@ -373,4 +373,22 @@ body.dark-mode #welcome1::before {
     filter: brightness(1.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
     mix-blend-mode: screen;
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        margin-top: 10%;
+    }
+    .header-content-img {
+        width: 70%;
+        height: 70%;
+        margin-left: 0;
+    }
+    .nav-content ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .card2 {
+        height: 40dvh;
+    }
 }
