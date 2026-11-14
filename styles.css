@@ -29,7 +29,8 @@ body {
     list-style-type: none;
 }
 .nav-content a {
-    color: whitesmoke
+    color: #f7f3ea;
+    text-decoration: none;
 }
 
 .header-content {
@@ -72,15 +73,16 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #fafafa;
+    border-radius: 12px;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .card2 {
     position: relative;
     text-align: center;
-    margin: 20px auto;
-    width: 98vw;
-    height: 45vh;
-    border-radius: 1dvh;
+    height: 60dvh;
     overflow: hidden;
 }
 
@@ -286,4 +288,89 @@ body {
     display: flex;
     flex-direction: start;
     margin-left: 2%;
+}
+.darkmode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+body.dark-mode .header-container {
+    background-color: #1E1E1E;
+}
+body.dark-mode .card {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+}
+body.dark-mode .card2::before {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+body.dark-mode .card-info {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .nav-content a {
+    color: #FFFFFF;
+}
+
+body.dark-mode .title,
+body.dark-mode .title-desc {
+    color: #FFFFFF;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .explore-btn {
+    background: #333333;
+    color: #FFFFFF;
+}
+
+body.dark-mode .explore-btn:hover {
+    background: #444444;
+}
+body.dark-mode .footer {
+    background-color: #1E1E1E;
+}
+body.dark-mode #welcome1 {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+}
+body .dark-mode #welcome1::before {
+    filter: grayscale(100%) brightness(0.5) opacity(0.45);
+}
+body.dark-mode #discover {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+}
+body.dark-mode #abode {
+    color: #FFD700;
+}
+body.dark-mode .card-title {
+    color: #FFFFFF;
+}
+body.dark-mode .learnmore {
+    color: #FFD700;
+}
+body.dark-mode #trademark {
+    color: #FFFFFF;
+}
+
+body.dark-mode #card-row {
+    background-color: #1E1E1E;
+}
+body.dark-mode #welcome1::before {
+    filter: brightness(1.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    mix-blend-mode: screen;
+    opacity: 1;
 }
