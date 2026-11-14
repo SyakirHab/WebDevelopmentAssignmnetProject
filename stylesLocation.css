@@ -1,0 +1,162 @@
+.body {
+    background-color: #FFFFFF;
+    Font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+    background-color: whitesmoke;
+}
+
+.nav-content {
+    align-self: start;
+    justify-self: center;
+    z-index: 2;
+    margin-right: 2%;
+}
+.nav-content ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+.nav-content a {
+    color: black;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#discover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #f0f0f0;
+}
+
+#collage-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.location-card {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    margin: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    transform: translateX(20vw);
+    opacity: 0.5;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.location-card p {
+    position: absolute;
+    bottom: 10px;
+    color: whitesmoke;
+    padding: 0 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.location-card h2 {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#ulu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/ulutemburong-03.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+#masjid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/masjidomarali.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+#kampong::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/kg-ayer-top.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+#jerudong::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/park-min.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.location-card.visible {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.culture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
