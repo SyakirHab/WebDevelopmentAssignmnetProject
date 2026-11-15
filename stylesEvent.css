@@ -26,3 +26,42 @@
 .nav-content a {
     color: black;
 }
+
+.event-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 80dvw;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: 1dvh auto;
+}
+
+.event-desc {
+    z-index: 2;
+    align-self: flex-start;
+    justify-self: center;
+    margin-top: 6%;
+}
+
+#event-calendar-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100dvh;
+    width: 80dvw;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: 1dvh auto;
+}
+
+#event-calendar {
+    z-index: 2;
+    align-self: flex-start;
+    justify-self: center;
+    margin-top: 6%;
+}
