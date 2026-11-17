@@ -14,3 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 });
+
+const darkModeButton = document.querySelector('.darkmode');
+
+if (localStorage.getItem('darkMode') === 'on') {
+  document.body.classList.add('dark-mode');
+}
+
+if (darkModeButton) {
+  darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'on' : 'off');
+    darkModeButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+  });
+  darkModeButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+}

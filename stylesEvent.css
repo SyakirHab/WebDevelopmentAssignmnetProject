@@ -1,5 +1,6 @@
-.body {
+body {
     background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-container {
@@ -64,4 +65,17 @@
     align-self: flex-start;
     justify-self: center;
     margin-top: 6%;
+}
+
+.darkmode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
 }

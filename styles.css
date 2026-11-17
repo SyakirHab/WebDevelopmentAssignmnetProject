@@ -1,3 +1,12 @@
+:root {
+    --color-bg: var(#f2f2f2);
+    --color-surface: var(#FFFFFF);
+    --color-muted: var(#6b6b6b);
+    --color-accent: var(#B8860B);
+    --color-teal: var(#2A6F6F);
+}
+
+
 body {
     background-color: #FFFFFF;
 }
@@ -29,7 +38,7 @@ body {
     list-style-type: none;
 }
 .nav-content a {
-    color: #f7f3ea;
+    color: var(--color-accent);
     text-decoration: none;
 }
 
