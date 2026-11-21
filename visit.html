@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="stylesVisit.css">
     <title>Visit Brunei</title>
 </head>
@@ -20,35 +24,60 @@
                     </ul>
                 </nav>
             </div>
-        </div>
-        <div>
-            <button class="darkmode">Dark Mode</button>
+            <div><button class="darkmode">Dark Mode</button></div>
         </div>
     </header>
-    <main>
-        <section class="visit-info">
-            <div class="visit-content">
-                <h1>Plan Your Visit to Brunei</h1>
-                <p>Brunei is a small country located on the island of Borneo in Southeast Asia. It is known for its rich culture, beautiful landscapes, and friendly people. Visitors can explore the capital city of Bandar Seri Begawan, visit the stunning mosques and palaces, and enjoy the natural beauty of the rainforests and beaches. Brunei is also famous for its delicious cuisine, which includes dishes such as nasi lemak, satay, and beef rendang. Whether you're interested in history, nature, or food, Brunei has something to offer for everyone.</p>
+    <main class="visit-page">
+        <section class="visit-intro card-block">
+            <h1>Plan Your Visit to Brunei</h1>
+            <p>Brunei is a small country on the island of Borneo in Southeast Asia. Known for its rich culture, beautiful landscapes, and friendly people, it offers stunning mosques and palaces, rainforests, beaches, and delicious cuisine — nasi lemak, satay, and beef rendang. Whether you're into history, nature, or food, Brunei has something for everyone.</p>
+        </section>
+
+        <section class="quick-facts">
+            <div class="fact-card">
+                <span class="fact-icon">🌤️</span>
+                <h3>Best Time to Visit</h3>
+                <p>March to October</p>
             </div>
-            <div class="travel-tips">
-                <h2>Travel Tips</h2>
-                <ul>
-                    <li>Best time to visit: March to October</li>
-                    <li>Currency: Brunei Dollar (BND)</li>
-                    <li>Language: Malay (official), English widely spoken</li>
-                    <li>Visa requirements: <a href="https://www.mfa.gov.bn/Pages/Visa-Information.aspx">Here</a></li>
-                    <li>Local customs: Dress modestly, especially when visiting religious sites</li>
-                    <li>Friday all-day closures for religious observance</li>
-                </ul>
+            <div class="fact-card">
+                <span class="fact-icon">💵</span>
+                <h3>Currency</h3>
+                <p>Brunei Dollar (BND)</p>
+            </div>
+            <div class="fact-card">
+                <span class="fact-icon">🗣️</span>
+                <h3>Language</h3>
+                <p>Malay (English widely spoken)</p>
+            </div>
+            <div class="fact-card">
+                <span class="fact-icon">🛂</span>
+                <h3>Visa</h3>
+                <p>Check requirements <a href="https://www.mfa.gov.bn/Pages/Visa-Information.aspx">here</a></p>
             </div>
         </section>
-        <section class="dart">
-            <div id="dart-info">
+
+        <section class="travel-tips card-block">
+            <h2>Travel Tips</h2>
+            <ul class="tips-list">
+                <li><span>👗</span> Dress modestly, especially at religious sites.</li>
+                <li><span>🕌</span> Friday all-day closures for religious observance.</li>
+                <li><span>🍽️</span> Try local dishes: nasi lemak, ambuyat, satay.</li>
+                <li><span>🚗</span> Use the Dart app for public transport.</li>
+                <li><span>💰</span> Cards accepted in cities; carry cash for markets.</li>
+            </ul>
+        </section>
+
+        <section class="dart card-block dart-showcase">
+            <div class="dart-text">
                 <h2>Dart</h2>
-                <p>A Bruneian app for public transport</p>
-                <p>Download the app from the <a href="https://play.google.com/store/apps/details?id=com.dartbrunei.dart">Google Play Store</a> or <a href="https://apps.apple.com/bn/app/dart/id1509050910">Apple App Store</a>.</p>
-                <img src="assets/dart.webp" alt="Dart App" width="600dvw" height="400dvh">
+                <p>A Bruneian app for public transport. Download it to get around easily.</p>
+                <div class="store-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.dartbrunei.dart" target="_blank" class="store-btn">Google Play</a>
+                    <a href="https://apps.apple.com/bn/app/dart/id1509050910" target="_blank" class="store-btn store-btn--secondary">App Store</a>
+                </div>
+            </div>
+            <div class="dart-image">
+                <img src="assets/dart.webp" alt="Dart App" style="max-width: 100%; height: auto;">
             </div>
         </section>
     </main>

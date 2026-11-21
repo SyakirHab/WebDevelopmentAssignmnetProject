@@ -1,6 +1,5 @@
 body {
-    background-color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-bg);
 }
 
 .header-container {
@@ -9,8 +8,22 @@ body {
     grid-template-rows: 1fr;
     position: relative;
     overflow: hidden;
-    height: 50vh;
+    height: 70vh;
     background-color: whitesmoke;
+}
+
+.header-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/arrival.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    filter:brightness(0.8)
 }
 
 .nav-content {
@@ -28,59 +41,157 @@ body {
     color: black;
 }
 
-.visit-info {
+.visit-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
     display: flex;
-    position: relative;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100dvh;
-    width: 80dvw;
-    background-color: aliceblue;
-    border-radius: 10px;
-    margin: 1dvh auto;
+    gap: 1.5rem;
 }
 
-.visit-content {
-    z-index: 2;
-    align-self: flex-start;
-    justify-self: center;
-    margin-top: 6%;
+.card-block {
+    background-color: #F2F2F2;
+    border-radius: var(--radius, 12px);
+    padding: 2rem;
+    box-shadow: var(--shadow-soft, 0 4px 12px rgba(0,0,0,0.08));
+}
+.card-block h1 { margin-bottom: 0.75rem; }
+.card-block h2 { margin-bottom: 0.75rem; }
+.card-block p {
+    color: var(--color-muted, #6B6B6B);
+    max-width: 70ch;
+    line-height: 1.6;
 }
 
-.travel-tips {
+.quick-facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.fact-card {
+    background: #ffffff;
+    border-radius: var(--radius, 12px);
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft, 0 4px 12px rgba(0,0,0,0.08));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.fact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift, 0 18px 36px rgba(0,0,0,0.2));
+}
+.fact-icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.fact-card h3 {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+}
+.fact-card p {
+    color: var(--color-muted, #6B6B6B);
+    font-size: 0.9rem;
+    margin: 0;
+}
+.fact-card a {
+    color: var(--color-accent, #B8860B);
+    font-weight: 600;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+.tips-list li {
     display: flex;
-    position: relative;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100dvh;
-    width: 80dvw;
-    background-color: aliceblue;
-    border-radius: 10px;
-    margin: 1dvh auto;
+    gap: 0.75rem;
+    background: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius, 12px);
+    box-shadow: var(--shadow-soft, 0 4px 12px rgba(0,0,0,0.08));
 }
+.tips-list li span { font-size: 1.25rem; }
 
-.dart {
+.dart-showcase {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+.dart-text p {
+    color: var(--color-muted, #6B6B6B);
+}
+.store-buttons {
     display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100dvh;
-    width: 80dvw;
-    background-color: aliceblue;
-    border-radius: 10px;
-    margin: 1dvh auto;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.store-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: var(--color-accent, #B8860B);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+.store-btn:hover {
+    background: var(--color-teal, #2A6F6F);
+    transform: translateY(-2px);
+}
+.store-btn--secondary {
+    background: var(--color-teal, #2A6F6F);
+}
+.store-btn--secondary:hover {
+    background: var(--color-accent, #B8860B);
+}
+.dart-image img {
+    border-radius: var(--radius, 12px);
+    box-shadow: var(--shadow-soft, 0 4px 12px rgba(0,0,0,0.08));
 }
 
-.dart-info {
-    z-index: 2;
-    align-self: flex-start;
-    justify-self: center;
-    margin-top: 6%;
+.darkmode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-accent, #B8860B) !important;
+    color: #fff !important;
+    border: none;
+    border-radius: var(--radius, 12px);
+    cursor: pointer;
+    z-index: 1000;
 }
 
+.nav-content a { transition: color 0.2s ease; }
+.nav-content a:hover,
+.nav-content a:focus-visible { color: var(--color-accent, #B8860B); }
 
+/* Dark mode */
+body.dark-mode { background-color: #121212; color: #FFFFFF; }
+body.dark-mode .header-container { background-color: #1E1E1E; }
+body.dark-mode .visit-page .card-block,
+body.dark-mode .quick-facts .fact-card,
+body.dark-mode .tips-list li { background-color: #1E1E1E; color: #FFFFFF; box-shadow: none; }
+body.dark-mode .card-block p,
+body.dark-mode .fact-card p,
+body.dark-mode .dart-text p { color: #B0B0B0; }
+body.dark-mode .nav-content a { color: #FFFFFF; }
+body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B) !important; color: #fff !important; border-radius: var(--radius, 12px); }
 
-
+@media (max-width: 900px) {
+    .quick-facts { grid-template-columns: repeat(2, 1fr); }
+    .dart-showcase { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+    .quick-facts { grid-template-columns: 1fr; }
+    .card-block { padding: 1.25rem; }
+}

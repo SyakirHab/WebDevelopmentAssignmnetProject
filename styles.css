@@ -8,7 +8,7 @@
 
 
 body {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg);
 }
 
 
@@ -38,7 +38,8 @@ body {
     list-style-type: none;
 }
 .nav-content a {
-    color: var(--color-accent);
+    color: whitesmoke;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
     text-decoration: none;
 }
 
@@ -59,14 +60,15 @@ body {
 }
 
 .title {
-    margin: 0 0 0 20px;
-    color: #f7f3ea;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+    color: rgb(255, 255, 0);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 .title-desc {
-    margin: 0 0 0 30px;
-    color:aliceblue;
+    margin: 0 auto;
+    color: #F2F2F2;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    filter: blur(0.8);
 }
 
 .background-video {
@@ -81,7 +83,7 @@ body {
 #card-row {
     display: flex;
     flex-direction: column;
-    background-color: #fafafa;
+    background-color: #F2F2F2;
     border-radius: 12px;
     padding: 0;
     width: 100%;
@@ -93,6 +95,8 @@ body {
     text-align: center;
     height: 60dvh;
     overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .card-bg {
@@ -200,7 +204,7 @@ body {
   flex-direction: column;
   width: 98vw;
   height: 30dvh;
-  background-color: aliceblue;
+  background-color: #F2F2F2;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
@@ -220,11 +224,11 @@ body {
 }
 
 #card2-2 .card-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/togo.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/togo.webp);
 }
 
 #card2-3 .card-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/ambuyat.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/ambuyat.webp);
 }
 
 #card2-4 .card-bg {
@@ -265,11 +269,11 @@ body {
     border-radius: 16px;
     margin: 0 auto;
     padding: 12px 12px;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 #abode {
-    color: #998800;
+    color: white;
     margin: 0 auto;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
@@ -401,3 +405,35 @@ body.dark-mode #welcome1::before {
         height: 40dvh;
     }
 }
+/* Accent polish */
+.nav-content a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-content a:hover,
+.nav-content a:focus-visible {
+  color: var(--color-accent);
+}
+.nav-content a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.2s ease;
+}
+.nav-content a:hover::after,
+.nav-content a:focus-visible::after {
+  width: 100%;
+}
+.darkmode {
+  background-color: var(--color-accent) !important;
+  color: #fff !important;
+  border-radius: var(--radius);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.darkmode:hover { transform: translateY(-2px); filter: brightness(1.1); }
+.explore-btn { background: var(--color-accent); color: #fff; }
+.explore-btn:hover { background: var(--color-teal); transform: scale(0.95); }

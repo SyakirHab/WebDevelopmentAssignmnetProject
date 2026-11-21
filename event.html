@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="stylesEvent.css">
     <title>event</title>
 </head>
@@ -20,9 +24,7 @@
                     </ul>
                 </nav>
             </div>
-        </div>
-        <div>
-            <button class="darkmode">Dark Mode</button>
+            <div><button class="darkmode">Dark Mode</button></div>
         </div>
     </header>
     <main>
@@ -32,13 +34,49 @@
                 <p>Through cultural and local colorful festivities brunei has it all - Experience current and ongoing brunei events happening here in the abode of peace.</p>
             </div>
         </section>
-        <section id ="event-calendar-container">
-            <div id ="event-calendar">
+        <section id="event-calendar-container">
+            <div id="event-calendar">
                 <h1>Event Calendar 2026</h1>
                 <img src="assets/Calendar1.jpg" alt="Event Calendar" style="max-width: 100%; height: auto;">
                 <img src="assets/calendar2.jpg" alt="Event Calendar" style="max-width: 100%; height: auto;">
                 <img src="assets/calendar3.jpg" alt="Event Calendar" style="max-width: 100%; height: auto;">
                 <p>Note: The event calendar is subject to change. Please check <a href="https://www.bruneitourism.com/events/" target="_blank">Official website</a> for the latest updates.</p>
+            </div>
+        </section>
+        <section class="events-upcoming">
+            <h1>Upcoming Events</h1>
+            <p>Highlights you can look forward to during your visit to the Abode of Peace.</p>
+            <div class="events-grid">
+                <article class="event-card">
+                    <img src="assets/Calendar1.jpg" alt="Brunei Regatta">
+                    <div class="event-card-body">
+                        <span class="event-date">Mar 15, 2026</span>
+                        <h3>Brunei Regatta</h3>
+                        <p>Traditional boat races and cultural performances along the Brunei River.</p>
+                        <a href="https://www.bruneitourism.com/events/" target="_blank" class="event-link">Learn more</a>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <img src="assets/calendar2.jpg" alt="Royal Brunei Armed Forces Day">
+                    <div class="event-card-body">
+                        <span class="event-date">May 31, 2026</span>
+                        <h3>Royal Brunei Armed Forces Day</h3>
+                        <p>Parades, exhibitions, and community activities celebrating the armed forces.</p>
+                        <a href="https://www.bruneitourism.com/events/" target="_blank" class="event-link">Learn more</a>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <img src="assets/calendar3.jpg" alt="Brunei December Festival">
+                    <div class="event-card-body">
+                        <span class="event-date">Dec 1, 2026</span>
+                        <h3>Brunei December Festival</h3>
+                        <p>A month of concerts, food fairs, and family-friendly festivities.</p>
+                        <a href="https://www.bruneitourism.com/events/" target="_blank" class="event-link">Learn more</a>
+                    </div>
+                </article>
+            </div>
+            <div class="events-cta">
+                <a href="https://www.bruneitourism.com/events/" target="_blank" class="events-cta-btn">View all events on the official site</a>
             </div>
         </section>
     </main>
