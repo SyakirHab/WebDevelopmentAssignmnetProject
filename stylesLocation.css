@@ -225,13 +225,6 @@ body {
     .culture-cards { grid-template-columns: 1fr; }
 }
 
-.footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
 .darkmode {
   background-color: var(--color-accent, #B8860B) !important;
   color: #fff !important;
@@ -262,7 +255,6 @@ body.dark-mode .culture { background-color: #1E1E1E; color: #FFFFFF; }
 body.dark-mode .culture-card { background-color: #2a2a2a; color: #FFFFFF; box-shadow: none; }
 body.dark-mode .culture-card h2 { color: var(--color-accent, #B8860B); }
 body.dark-mode .culture-card p { color: #E0E0E0; }
-body.dark-mode .footer { background-color: #1E1E1E; color: #FFFFFF; }
 body.dark-mode .nav-content a { color: #FFFFFF; }
 body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B) !important; color: #fff !important; border-radius: var(--radius, 12px); }
 

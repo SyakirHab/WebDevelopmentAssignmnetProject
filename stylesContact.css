@@ -8,8 +8,20 @@ body {
     grid-template-rows: 1fr;
     position: relative;
     overflow: hidden;
-    height: 50vh;
+    height: 70vh;
     background-color: whitesmoke;
+}
+
+.header-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(assets/contact.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.6)
+    
 }
 
 .nav-content {
@@ -27,13 +39,17 @@ body {
     color: black;
 }
 
+.nav-content a { transition: color 0.2s ease; }
+.nav-content a:hover,
+.nav-content a:focus-visible { color: var(--color-accent, #B8860B); }
+
 .form-container {
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    height: 1200px;
+    height: 800px;
     width: 95dvw;
     background-color: #F2F2F2;
     border-radius: 10px;
@@ -53,6 +69,7 @@ body {
     border-radius: var(--radius, 12px);
     padding: 1.5rem;
     box-shadow: var(--shadow-soft, 0 4px 12px rgba(0,0,0,0.08));
+    min-height: 600px;
 }
 
 .contact-info-card h1 { margin-bottom: 0.5rem; }

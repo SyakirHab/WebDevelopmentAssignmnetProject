@@ -290,18 +290,7 @@ body {
     right: 4%;
 }
 
-.footer {
-    display: flex;
-    background-color: #36454F;
-    height: 40dvh;
-    border-radius: 12px;
-}
 
-#trademark  {
-    display: flex;
-    flex-direction: start;
-    margin-left: 2%;
-}
 .darkmode {
     position: fixed;
     bottom: 20px;
@@ -352,9 +341,6 @@ body.dark-mode .explore-btn {
 body.dark-mode .explore-btn:hover {
     background: #444444;
 }
-body.dark-mode .footer {
-    background-color: #1E1E1E;
-}
 body.dark-mode #welcome1 {
     background-color: #1E1E1E;
     color: #FFFFFF;
@@ -375,10 +361,6 @@ body.dark-mode .card-title {
 body.dark-mode .learnmore {
     color: #FFD700;
 }
-body.dark-mode #trademark {
-    color: #FFFFFF;
-}
-
 body.dark-mode #card-row {
     background-color: #1E1E1E;
 }
