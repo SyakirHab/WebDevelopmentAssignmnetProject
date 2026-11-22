@@ -14,8 +14,18 @@ cards.forEach(card => {
   content.appendChild(info);
 
   // Toggle hover state (works for mouse + keyboard)
-  const show = () => card.classList.add('hover');
-  const hide = () => card.classList.remove('hover');
+  const heading = card.querySelector('.card-heading');
+  const backdrop = card.querySelector('.card-heading-backdrop');
+  const show = () => {
+    card.classList.add('hover');
+    if (heading) heading.style.opacity = '0';
+    if (backdrop) backdrop.style.opacity = '0';
+  };
+  const hide = () => {
+    card.classList.remove('hover');
+    if (heading) heading.style.opacity = '1';
+    if (backdrop) backdrop.style.opacity = '1';
+  };
 
   card.addEventListener('mouseenter', show);
   card.addEventListener('mouseleave', hide);

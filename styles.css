@@ -118,15 +118,15 @@ body {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .card2::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(255, 255, 255, 0.35);
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: 1;
     transition: background-color 0.25s ease;
     pointer-events: none;
@@ -140,7 +140,7 @@ body {
 
 .card2:hover::before,
 .card2.hover::before {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .card2:hover,
@@ -174,9 +174,30 @@ body {
     transform: translateY(0);
 }
 
-.card2 h1 {
+.card-heading-group {
+    position: relative;
+    display: inline-block;
+    padding: 0.35rem;
+}
+
+.card-heading-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    z-index: 1;
+    transition: opacity 0.25s ease;
+}
+
+.card2 .card-heading {
+    position: relative;
+    z-index: 2;
     color: #ffffff;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    margin: 0;
+    width: auto;
+    transition: opacity 0.25s ease;
 }
 /* ai generated */
 
@@ -220,19 +241,19 @@ body {
 }
 
 #card2-1 .card-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/unnamed.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15)), url(assets/unnamed.jpg);
 }
 
 #card2-2 .card-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/togo.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(assets/togo.webp);
 }
 
 #card2-3 .card-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/ambuyat.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(assets/ambuyat.webp);
 }
 
 #card2-4 .card-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/mosque.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(assets/mosque.jpg);
 }
 
 #welcome1 {

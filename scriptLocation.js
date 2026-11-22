@@ -6,9 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 obs.unobserve(entry.target);
+                arrow.style.transform = 'rotate(0deg)';
             }
 });
     }, { threshold: 0.15 });
+
+    const arrow = document.getElementById('arrow');
 
     cards.forEach(card => {
         observer.observe(card);
