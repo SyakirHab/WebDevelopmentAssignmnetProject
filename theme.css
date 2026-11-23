@@ -1,4 +1,6 @@
-/* theme.css - shared footer and color palette + base typography */
+﻿/* theme.css - shared footer and color palette + base typography */
+
+/*CSS VARIABLES / CUSTOM PROPERTIES*/
 :root {
   --color-bg: #FFFFFF;
   --color-surface: #F2F2F2;
@@ -21,6 +23,7 @@
   --space-4: 2rem;
 }
 
+/*DARK MODE VARIABLES*/
 body.dark-mode {
   --color-bg: #121212;
   --color-surface: #1E1E1E;
@@ -28,6 +31,7 @@ body.dark-mode {
   --color-muted: #B0B0B0;
 }
 
+/*BASE RESET & TYPOGRAPHY*/
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -69,6 +73,7 @@ button, input, textarea, select {
   border-radius: 4px;
 }
 
+/*REDUCED MOTION*/
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -78,7 +83,7 @@ button, input, textarea, select {
   }
 }
 
-/* ===== Footer (shared across all pages) ===== */
+/*FOOTER (SHARED ACROSS ALL PAGES)*/
 .footer {
   position: relative;
   background-color: var(--color-bg);
@@ -195,7 +200,7 @@ body.dark-mode .footer-back-to-top:hover {
   position: relative;
 }
 
-/* Contact page footer - extended with contact details */
+/*CONTACT PAGE FOOTER - EXTENDED WITH CONTACT DETAILS*/
 .footer--contact .footer-contact {
   display: flex;
   flex-direction: column;
@@ -219,7 +224,7 @@ body.dark-mode .footer-back-to-top:hover {
   flex-shrink: 0;
 }
 
-/* Dark mode footer overrides */
+/*DARK MODE FOOTER OVERRIDES*/
 body.dark-mode .footer {
   background-color: #1E1E1E;
 }
@@ -232,7 +237,7 @@ body.dark-mode .footer-contact-item {
   color: #FFFFFF;
 }
 
-/* Responsive footer */
+/*RESPONSIVE FOOTER*/
 @media (max-width: 768px) {
   .footer {
     padding: 3rem 1.5rem 1.5rem;
@@ -244,5 +249,130 @@ body.dark-mode .footer-contact-item {
   }
   .footer-decoration {
     width: 80px;
+  }
+}
+
+/*MOBILE NAVIGATION MENU*/
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  align-self: start;
+  justify-self: start;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/*MOBILE NAV PANEL (SLIDE-IN)*/
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 1001 !important;
+  }
+
+  .nav-content {
+    grid-area: auto !important;
+    align-self: auto !important;
+    justify-self: auto !important;
+    margin-right: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 75vw !important;
+    max-width: 300px !important;
+    height: 100vh !important;
+    background-color: var(--color-bg) !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.35s ease !important;
+    z-index: 1000 !important;
+    padding-top: 5rem !important;
+    box-shadow: var(--shadow-lift) !important;
+    overflow-y: auto !important;
+  }
+
+  .nav-content.open {
+    transform: translateX(0) !important;
+  }
+
+  .header-container {
+    overflow: visible !important;
+  }
+
+  .nav-content ul {
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 2rem 1.5rem !important;
+    margin: 0 !important;
+  }
+
+  .nav-content li {
+    list-style: none;
+  }
+
+  .nav-content a {
+    display: block !important;
+    padding: 1rem 0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+
+  body.dark-mode .nav-content {
+    background-color: #1E1E1E;
+  }
+}
+
+/*DESKTOP NAVIGATION*/
+@media (min-width: 769px) {
+  .nav-content {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none;
+    box-shadow: none;
+    padding: 0;
+    overflow: visible;
+    grid-area: 1/1;
+    align-self: start;
+    justify-self: center;
+    margin-right: 2%;
+  }
+
+  .nav-content ul {
+    flex-direction: row;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .nav-content a {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
   }
 }

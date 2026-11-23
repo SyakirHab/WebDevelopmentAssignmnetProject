@@ -13,6 +13,11 @@
 <body>
     <header>
         <div class="header-container">
+            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <div class="nav-content">
                 <nav>
                     <ul>
@@ -39,7 +44,7 @@
                     </div>
                 </div>
                 <div id="contactForm">
-                    <form action="contact.html" method="GET">
+                    <form id="contactFormElem" action="contact.html" method="GET">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -56,22 +61,13 @@
                         </div>
                         <button type="submit">Send Message</button>
                     </form>
+                    <div id="formFeedback" class="feedback-message hidden" role="alert" aria-live="polite"></div>
                 </div>
             </div>
         </section>
     </main>
     <footer class="footer footer--contact">
         <div class="footer-decoration"></div>
-        <div class="footer-contact">
-            <div class="footer-contact-item">
-                <img src="assets/mail.svg" alt="Email" width="20" height="20">
-                <span>6614@laksamanacollege.edu.bn</span>
-            </div>
-            <div class="footer-contact-item">
-                <img src="assets/call.svg" alt="Phone" width="20" height="20">
-                <span>1-800-123-4567</span>
-            </div>
-        </div>
         <nav class="footer-links">
             <a href="index.html">HOME</a>
             <a href="locations.html">DISCOVER BRUNEI</a>

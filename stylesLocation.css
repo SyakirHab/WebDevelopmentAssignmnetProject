@@ -1,8 +1,10 @@
+﻿/*BASE / BODY STYLES*/
 body {
     background-color: var(--color-bg);
     overflow-x: hidden;
 }
 
+/*HEADER CONTAINER*/
 .header-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -13,6 +15,7 @@ body {
     background-color: whitesmoke;
 }
 
+/*NAVIGATION*/
 .nav-content {
     align-self: start;
     justify-self: center;
@@ -28,6 +31,7 @@ body {
     color: whitesmoke;
 }
 
+/*HEADER IMAGE*/
 .header-image {
     width: 100%;
     height: 100%;
@@ -38,6 +42,7 @@ body {
     z-index: 1;
 }
 
+/*DISCOVER SECTION*/
 #discover {
     position: absolute;
     top: 50%;
@@ -49,6 +54,7 @@ body {
     z-index: 2;
 }
 
+/*HERO SECTION*/
 .hero {
     position: relative;
     display: flex;
@@ -59,15 +65,17 @@ body {
     background-color: #F2F2F2;
 }
 
+/*ARROW ELEMENT*/
 #arrow {
     position: absolute;
     bottom: 1.5rem;
-    width: 8%; 
+    width: 8%;
     filter: brightness(0) saturate(100%) invert(73%) sepia(39%) saturate(758%) hue-rotate(8deg) brightness(91%) contrast(88%);
     transition: transform 0.3s ease;
     transform: rotate(180deg);
 }
 
+/*COLLAGE CONTAINER*/
 #collage-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -77,6 +85,7 @@ body {
     padding: 0 1rem 3rem;
 }
 
+/*LOCATION CARDS*/
 .location-card {
     position: relative;
     overflow: hidden;
@@ -107,6 +116,7 @@ body {
     max-width: 90%;
 }
 
+/*LOCATION DESCRIPTIONS*/
 .location-description {
     background: #ffffff;
     border-radius: 10px;
@@ -121,6 +131,7 @@ body {
     font-size: 0.95rem;
 }
 
+/*LOCATION BACKGROUND IMAGES*/
 #ulu::before {
     content: "";
     position: absolute;
@@ -173,12 +184,14 @@ body {
     opacity: 0.8;
 }
 
+/*VISIBLE STATE*/
 .location-card.visible {
     transform: translateX(0);
     opacity: 1;
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
+/*CULTURE SECTION*/
 .culture {
     display: flex;
     flex-direction: column;
@@ -207,6 +220,7 @@ body {
     margin: 0 auto;
 }
 
+/*CULTURE CARDS*/
 .culture-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -248,13 +262,15 @@ body {
     margin: 0;
 }
 
+/*RESPONSIVE MEDIA QUERIES (900px)*/
 @media (max-width: 900px) {
     .culture-cards { grid-template-columns: 1fr; }
 }
 
+/*DARK MODE TOGGLE BUTTON*/
 .darkmode {
-  background-color: var(--color-accent, #B8860B) !important;
-  color: #fff !important;
+  background-color: var(--color-accent, #B8860B);
+  color: #fff;
   border: none;
   border-radius: var(--radius, 12px);
   padding: 10px 20px;
@@ -265,10 +281,10 @@ body {
   right: 20px;
 }
 
-/* Accent + dark mode parity */
+/*ACCENT + DARK MODE PARITY*/
 .nav-content a { transition: color 0.2s ease; }
 .nav-content a:hover, .nav-content a:focus-visible { color: var(--color-accent, #B8860B); }
-.darkmode { background-color: var(--color-accent, #B8860B) !important; color: #fff !important; border-radius: var(--radius, 12px); }
+.darkmode { background-color: var(--color-accent, #B8860B); color: #fff; border-radius: var(--radius, 12px); }
 body.dark-mode { background-color: #121212; color: #FFFFFF; }
 body.dark-mode .header-container { background-color: #1E1E1E; }
 body.dark-mode .header-image { filter: brightness(0.55); }
@@ -284,8 +300,9 @@ body.dark-mode .culture-card { background-color: #2a2a2a; color: #FFFFFF; box-sh
 body.dark-mode .culture-card h2 { color: var(--color-accent, #B8860B); }
 body.dark-mode .culture-card p { color: #E0E0E0; }
 body.dark-mode .nav-content a { color: #FFFFFF; }
-body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B) !important; color: #fff !important; border-radius: var(--radius, 12px); }
+body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B); color: #fff; border-radius: var(--radius, 12px); }
 
+/*RESPONSIVE MEDIA QUERIES (640px)*/
 @media (max-width: 640px) {
     .header-container {
         height: 50vh;
@@ -303,4 +320,132 @@ body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B) !impor
         grid-template-columns: 1fr;
         #culture-card3 { grid-column: auto; }
     }
+}
+
+/*MOBILE NAVIGATION MENU OVERIDES (DISCOVER BRUNEI)*/
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #000000;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .menu-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .header-container {
+    overflow: visible;
+  }
+
+  .nav-content {
+    grid-area: auto;
+    align-self: auto;
+    justify-self: auto;
+    margin-right: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75vw;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 1000;
+    padding-top: 5rem;
+    box-shadow: var(--shadow-lift, 0 18px 36px rgba(0,0,0,0.2));
+    overflow-y: auto;
+  }
+
+  .nav-content.open {
+    transform: translateX(0);
+  }
+
+  .nav-content ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 2rem 1.5rem;
+    margin: 0;
+  }
+
+  .nav-content li {
+    list-style: none;
+  }
+
+  .nav-content a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
+    text-shadow: none;
+  }
+
+  body.dark-mode .nav-content {
+    background-color: #1E1E1E;
+  }
+
+  body.dark-mode .nav-content a {
+    color: #E0E0E0;
+  }
+
+  body.dark-mode .hamburger-line {
+    background-color: #FFFFFF;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-content {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none;
+    box-shadow: none;
+    padding: 0;
+    overflow: visible;
+    grid-area: 1/1;
+    align-self: start;
+    justify-self: center;
+    margin-right: 2%;
+  }
+
+  .nav-content ul {
+    flex-direction: row;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .nav-content a {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }

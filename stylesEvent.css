@@ -1,7 +1,9 @@
+﻿/*BASE / BODY STYLES*/
 body {
     background-color: var(--color-bg);
 }
 
+/*HEADER CONTAINER*/
 .header-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -12,6 +14,7 @@ body {
     background-color: whitesmoke;
 }
 
+/*HEADER BACKGROUND IMAGE*/
 .header-container::before {
     content: "";
     position: absolute;
@@ -24,6 +27,7 @@ body {
     filter: brightness(0.8)
 }
 
+/*NAVIGATION*/
 .nav-content {
     align-self: start;
     justify-self: center;
@@ -39,6 +43,7 @@ body {
     color: whitesmoke;
 }
 
+/*EVENT CONTAINER*/
 .event-container {
     display: flex;
     position: relative;
@@ -53,6 +58,7 @@ body {
     margin: 1dvh auto;
 }
 
+/*EVENT DESCRIPTION*/
 .event-desc {
     z-index: 2;
     align-self: flex-start;
@@ -60,6 +66,7 @@ body {
     margin-top: 6%;
 }
 
+/*EVENT CALENDAR CONTAINER*/
 #event-calendar-container {
     display: flex;
     position: relative;
@@ -80,6 +87,7 @@ body {
     margin-top: 6%;
 }
 
+/*DARK MODE TOGGLE BUTTON*/
 .darkmode {
   background-color: var(--color-accent, #B8860B) !important;
   color: #fff !important;
@@ -92,7 +100,8 @@ body {
   bottom: 20px;
   right: 20px;
 }
-/* Accent + dark mode parity */
+
+/*ACCENT + DARK MODE PARITY*/
 .nav-content a { transition: color 0.2s ease; }
 .nav-content a:hover, .nav-content a:focus-visible { color: var(--color-accent, #B8860B); }
 .darkmode { background-color: var(--color-accent, #B8860B) !important; color: #fff !important; border-radius: var(--radius, 12px); }
@@ -102,7 +111,8 @@ body.dark-mode .event-container,
 body.dark-mode #event-calendar-container { background-color: #1E1E1E; color: #FFFFFF; }
 body.dark-mode .nav-content a { color: #FFFFFF; }
 body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B) !important; }
-/* Events page polish */
+
+/*EVENTS PAGE POLISH*/
 .events-upcoming {
     width: 100dvw;
     margin: 1dvh auto;
@@ -175,7 +185,7 @@ body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B) !impor
     box-shadow: var(--shadow-soft, 0 4px 12px rgba(0,0,0,0.08));
 }
 
-/* Comprehensive dark mode */
+/*COMPREHENSIVE DARK MODE*/
 body.dark-mode { background-color: #121212; color: #FFFFFF; }
 body.dark-mode .header-container { background-color: #1E1E1E; }
 body.dark-mode .event-container,
@@ -188,6 +198,7 @@ body.dark-mode #event-calendar img { box-shadow: none; opacity: 0.9; }
 body.dark-mode .nav-content a { color: #FFFFFF; }
 body.dark-mode .darkmode { background-color: var(--color-accent, #B8860B) !important; color: #fff !important; border-radius: var(--radius, 12px); }
 
+/*RESPONSIVE MEDIA QUERIES*/
 @media (max-width: 768px) {
     .events-upcoming { width: 92dvw; padding: 1.25rem; }
     .event-card img { height: 160px; }

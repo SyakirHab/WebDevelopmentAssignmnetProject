@@ -32,3 +32,24 @@ if (darkModeButton) {
   });
   darkModeButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
 }
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navContent = document.querySelector('.nav-content');
+
+if (menuToggle && navContent) {
+  const toggleMenu = () => {
+    const isOpen = navContent.classList.toggle('open');
+    menuToggle.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  };
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  navContent.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navContent.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}

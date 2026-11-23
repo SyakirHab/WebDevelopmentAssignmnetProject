@@ -51,3 +51,59 @@ if (darkModeButton) {
   });
   darkModeButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
 }
+
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navContent = document.querySelector('.nav-content');
+
+if (menuToggle && navContent) {
+  const toggleMenu = () => {
+    const isOpen = navContent.classList.toggle('open');
+    menuToggle.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  };
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  navContent.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navContent.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+/* Contact form feedback */
+const contactForm = document.getElementById('contactFormElem');
+const formFeedback = document.getElementById('formFeedback');
+
+if (contactForm && formFeedback) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      showFeedback('Please fill in all fields before sending.', 'error');
+      return;
+    }
+
+    showFeedback('Thank you! Your message has been sent successfully.', 'success');
+    contactForm.reset();
+  });
+}
+
+function showFeedback(text, type = 'success') {
+  formFeedback.textContent = text;
+  formFeedback.classList.remove('hidden', 'feedback--success', 'feedback--error');
+  formFeedback.classList.add(`feedback--${type}`);
+  formFeedback.style.display = 'block';
+
+  setTimeout(() => {
+    formFeedback.classList.add('hidden');
+    formFeedback.style.display = 'none';
+  }, 5000);
+}

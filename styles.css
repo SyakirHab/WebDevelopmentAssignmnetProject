@@ -1,3 +1,4 @@
+﻿/*CSS VARIABLES / CUSTOM PROPERTIES*/
 :root {
     --color-bg: var(#f2f2f2);
     --color-surface: var(#FFFFFF);
@@ -6,12 +7,12 @@
     --color-teal: var(#2A6F6F);
 }
 
-
+/*BASE / BODY STYLES*/
 body {
     background-color: var(--color-bg);
 }
 
-
+/*HEADER & NAVIGATION*/
 .header-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -21,7 +22,6 @@ body {
     height: 70vh;
 }
 
-/* ai above box shadow*/
 .header-content, .background-image, .nav-content, .header-content-img {
     grid-area: 1/1;
 }
@@ -80,6 +80,7 @@ body {
     z-index: 1;
 }
 
+/*CARD COMPONENTS*/
 #card-row {
     display: flex;
     flex-direction: column;
@@ -199,6 +200,7 @@ body {
     width: auto;
     transition: opacity 0.25s ease;
 }
+
 /* ai generated */
 
 .explore-btn {
@@ -211,7 +213,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
-    pointer-events: auto;   
+    pointer-events: auto;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 .explore-btn:hover {
@@ -219,9 +221,9 @@ body {
     transform: scale(0.80);
 }
 
-
+/*ALTERNATE CARD COMPONENT*/
 .card {
-  display: flex;  
+  display: flex;
   flex-direction: column;
   width: 98vw;
   height: 30dvh;
@@ -240,6 +242,7 @@ body {
     margin-left: 2%;
 }
 
+/*CARD BACKGROUND IMAGES*/
 #card2-1 .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15)), url(assets/unnamed.jpg);
 }
@@ -256,6 +259,7 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(assets/mosque.jpg);
 }
 
+/*WELCOME SECTION*/
 #welcome1 {
     display: flex;
     flex-direction: column;
@@ -311,7 +315,7 @@ body {
     right: 4%;
 }
 
-
+/*DARK MODE TOGGLE BUTTON*/
 .darkmode {
     position: fixed;
     bottom: 20px;
@@ -325,6 +329,7 @@ body {
     z-index: 1000;
 }
 
+/*DARK MODE OVERRIDES*/
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
@@ -391,6 +396,7 @@ body.dark-mode #welcome1::before {
     opacity: 1;
 }
 
+/*RESPONSIVE MEDIA QUERIES*/
 @media (max-width: 768px) {
     .header-content {
         margin-top: 10%;
@@ -408,6 +414,8 @@ body.dark-mode #welcome1::before {
         height: 40dvh;
     }
 }
+
+/*ACCENT POLISH / OVERRIDES*/
 /* Accent polish */
 .nav-content a {
   position: relative;
